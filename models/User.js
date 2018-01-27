@@ -4,9 +4,9 @@ var bcrypt = require('bcryptjs');
 
 // set up a mongoose model
 var UserSchema = new Schema({
-  password: { type: String, required: true },
   email: { type: String, required: true, unique: true},
-  server: { type: String, required: false},
+  password: { type: String, required: true, min: [3, "password has to be at least 8 characters"] },
+  server: { type: String, required: false, default:},
   wotEmail: { type: String, required: false},
   wotPassword: { type: String, required: false}
 });
