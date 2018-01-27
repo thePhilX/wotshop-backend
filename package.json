@@ -1,0 +1,24 @@
+{
+  "name": "wotshop-backend",
+  "version": "1.0.0",
+  "description": "backend application for wot webshop",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thePhilX/wotshop-backend.git"
+  },
+  "author": "Philipp Großkreutz, Johanna Sommer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thePhilX/wotshop-backend/issues"
+  },
+  "homepage": "https://github.com/thePhilX/wotshop-backend#readme"
+}
