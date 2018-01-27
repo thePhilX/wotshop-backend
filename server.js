@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
 });
 
 // connect to database
-mongoose.connect(config.database);
+mongoose.connect(config.database, {useMongoClient: true});
 
 var port = process.env.PORT || 8080;
 app.listen(port);
