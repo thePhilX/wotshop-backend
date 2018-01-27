@@ -1,6 +1,6 @@
 // external requirements
 
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 var bodyparser = require('body-parser');
 var express = require('express');
 var mongoose = require('mongoose');
