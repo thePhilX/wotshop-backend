@@ -6,7 +6,7 @@ var bcrypt = require('bcryptjs');
 var UserSchema = new Schema({
   email: { type: String, required: true, unique: true},
   password: { type: String, required: true, min: [3, "password has to be at least 8 characters"] },
-  server: { type: String, required: false, default:},
+  server: { type: String, required: false},
   wotEmail: { type: String, required: false},
   wotPassword: { type: String, required: false}
 });
