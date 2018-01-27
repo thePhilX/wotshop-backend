@@ -1,5 +1,5 @@
-const express=require("express"),
-const userRoutesApi=express.Router(),
+const express=require("express");
+const userRoutesApi=express.Router();
 const userApi=require("../modules/userAPI");
 
 userRoutesApi.route("/users")
