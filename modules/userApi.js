@@ -79,10 +79,15 @@ API.getUser = function(req, res) {
 // post new user
 
 API.postUser = function(req, res) {
+    console.log("post started");
     var newUser = new User({
+        email: req.body.email,
         password: req.body.password,
-        email: req.body.email
+        accounts: req.body.accounts,
+        timestamp: req.body.timestamp
+        // TODO accounts including server, wotPassword & wotEmail
     });
+    console.log("UserObject:" + newUser);
     newUser.save(function(err, saveRes) {
         if (err) {
             return res.status(500).send(err);
@@ -101,7 +106,8 @@ API.updateUser = function(req, res) {
         }
         var updatedUser = user;
         if (req.body.password) updatedUser.password = req.body.password;
-
+        if (req.body.accounts) updatedUser.accounts = req.body.accounts;
+        
         return updatedUser.save(function(saveErr, saveRes) {
             if (saveErr) {
                 return res.status(500).send(saveErr);

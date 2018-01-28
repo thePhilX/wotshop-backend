@@ -33,6 +33,7 @@ API.postArticle = function(req, res) {
        deliveryTime: req.body.deliveryTime,
        timestamp: req.body.timestamp
    });
+   console.log("newArticle:" + newArticle);
    newArticle.save(function(err, saveRes) {
        if (err) {
            return res.status(500).send(err);

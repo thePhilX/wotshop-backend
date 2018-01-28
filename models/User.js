@@ -11,7 +11,7 @@ var Account = require('./Account');
 var UserSchema = new Schema({
   email: { type: String, required: true, unique: true},
   password: { type: String, required: true, min: [3, "password has to be at least 8 characters"] },
-  accounts: [{type: ObjectId, ref: 'Account', required: false }],
+  accounts: {type: [ObjectId], ref: 'Account', required: false },
   timestamp: { type: Date, default: Date.now }
 });
 
