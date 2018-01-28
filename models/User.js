@@ -2,14 +2,19 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcryptjs');
 
+var ObjectId = Schema.ObjectId;
+
+// models
+var Account = require('./Account');
+
 // set up a mongoose model
 var UserSchema = new Schema({
   email: { type: String, required: true, unique: true},
   password: { type: String, required: true, min: [3, "password has to be at least 8 characters"] },
-  server: { type: String, required: false},
-  wotEmail: { type: String, required: false},
-  wotPassword: { type: String, required: false}
+  accounts: [{type: ObjectId, ref: 'Account', required: false }],
+  timestamp: { type: Date, default: Date.now }
 });
+
 
 UserSchema.pre('save', function (next) {
     var user = this;
